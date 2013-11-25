@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="font" format="string" />
+    <attr name="textSizeTitle" format="dimension" />
+    <attr name="textSizeSummary" format="dimension" />
+
+    <declare-styleable name="SmartTextView">
+        <attr name="font"/>
+    </declare-styleable>
+    <declare-styleable name="SmartEditText">
+        <attr name="font"/>
+    </declare-styleable>
+    <declare-styleable name="SmartButton">
+        <attr name="font"/>
+    </declare-styleable>
+    <declare-styleable name="SmartSwitch">
+        <attr name="font"/>
+    </declare-styleable>
+    <declare-styleable name="SmartCheckBoxPreference">
+        <attr name="font"/>
+        <attr name="textSizeTitle" />
+        <attr name="textSizeSummary" />
+    </declare-styleable>
+    <declare-styleable name="SmartEditTextPreference">
+        <attr name="textSizeTitle" />
+        <attr name="textSizeSummary" />
+        <attr name="font"/>
+    </declare-styleable>
+    <declare-styleable name="SmartListPreference">
+        <attr name="textSizeTitle" />
+        <attr name="textSizeSummary" />
+        <attr name="font"/>
+    </declare-styleable>
+    <declare-styleable name="SmartMultiSelectListPreference">
+        <attr name="textSizeTitle" />
+        <attr name="textSizeSummary" />
+        <attr name="font"/>
+    </declare-styleable>
+    <declare-styleable name="SmartPreference">
+        <attr name="textSizeTitle" />
+        <attr name="textSizeSummary" />
+        <attr name="font"/>
+    </declare-styleable>
+    <declare-styleable name="SmartPreferenceCategory">
+        <attr name="textSizeTitle" />
+        <attr name="textSizeSummary" />
+        <attr name="font"/>
+    </declare-styleable>
+
+</resources>

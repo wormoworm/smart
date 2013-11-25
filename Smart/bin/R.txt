@@ -1,0 +1,39 @@
+int attr font 0x7f010000
+int attr textSizeSummary 0x7f010002
+int attr textSizeTitle 0x7f010001
+int drawable ic_launcher 0x7f020000
+int string app_name 0x7f030000
+int style AppBaseTheme 0x7f040000
+int style AppTheme 0x7f040001
+int[] styleable SmartButton { 0x7f010000 }
+int styleable SmartButton_font 0
+int[] styleable SmartCheckBoxPreference { 0x7f010000, 0x7f010001, 0x7f010002 }
+int styleable SmartCheckBoxPreference_font 0
+int styleable SmartCheckBoxPreference_textSizeSummary 2
+int styleable SmartCheckBoxPreference_textSizeTitle 1
+int[] styleable SmartEditText { 0x7f010000 }
+int styleable SmartEditText_font 0
+int[] styleable SmartEditTextPreference { 0x7f010000, 0x7f010001, 0x7f010002 }
+int styleable SmartEditTextPreference_font 0
+int styleable SmartEditTextPreference_textSizeSummary 2
+int styleable SmartEditTextPreference_textSizeTitle 1
+int[] styleable SmartListPreference { 0x7f010000, 0x7f010001, 0x7f010002 }
+int styleable SmartListPreference_font 0
+int styleable SmartListPreference_textSizeSummary 2
+int styleable SmartListPreference_textSizeTitle 1
+int[] styleable SmartMultiSelectListPreference { 0x7f010000, 0x7f010001, 0x7f010002 }
+int styleable SmartMultiSelectListPreference_font 0
+int styleable SmartMultiSelectListPreference_textSizeSummary 2
+int styleable SmartMultiSelectListPreference_textSizeTitle 1
+int[] styleable SmartPreference { 0x7f010000, 0x7f010001, 0x7f010002 }
+int styleable SmartPreference_font 0
+int styleable SmartPreference_textSizeSummary 2
+int styleable SmartPreference_textSizeTitle 1
+int[] styleable SmartPreferenceCategory { 0x7f010000, 0x7f010001, 0x7f010002 }
+int styleable SmartPreferenceCategory_font 0
+int styleable SmartPreferenceCategory_textSizeSummary 2
+int styleable SmartPreferenceCategory_textSizeTitle 1
+int[] styleable SmartSwitch { 0x7f010000 }
+int styleable SmartSwitch_font 0
+int[] styleable SmartTextView { 0x7f010000 }
+int styleable SmartTextView_font 0
