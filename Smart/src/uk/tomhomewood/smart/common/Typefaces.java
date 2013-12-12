@@ -7,10 +7,10 @@ import android.graphics.Typeface;
 import android.util.Log;
 
 public class Typefaces {
-	private final static String TAG = "SmartTextView";
-
-	public static final String FONT_DEFAULT_APP = "district_pro";
+	private final static String TAG = "Typefaces";
+	
 	public static final String FONT_DEFAULT_ANDROID = "roboto";
+	public static String FONT_DEFAULT_APP = FONT_DEFAULT_ANDROID;
 
 	public static final int TEXT_SIZE_TITLE_DEFAULT = 30;
 	public static final int TEXT_SIZE_SUMMARY_DEFAULT = 20;
@@ -28,15 +28,21 @@ public class Typefaces {
 		}
 		Typeface font = typefaces.get(fontName);
 		if(font==null){
-			try{
-				font = Typeface.createFromAsset(context.getAssets(), "fonts/"+fontName+".ttf");
+			if(fontName.equals(FONT_DEFAULT_ANDROID)){
+				font = Typeface.defaultFromStyle(Typeface.NORMAL);
 			}
-			catch(RuntimeException e){				//Loading the font from name.ttf failed, try name.otf in case it is an opentype font
+			else{
 				try{
-					font = Typeface.createFromAsset(context.getAssets(), "fonts/"+fontName+".otf");
+					font = Typeface.createFromAsset(context.getAssets(), "fonts/"+fontName+".ttf");
 				}
-				catch(RuntimeException e2){
-					Log.d(TAG, "Could not load font \""+fontName+"\": "+e2.toString());
+				catch(RuntimeException e){				//Loading the font from name.ttf failed, try name.otf in case it is an opentype font
+					try{
+						font = Typeface.createFromAsset(context.getAssets(), "fonts/"+fontName+".otf");
+					}
+					catch(RuntimeException e2){
+						Log.d(TAG, "Could not load font \""+fontName+"\": "+e2.toString());
+						e2.printStackTrace();
+					}
 				}
 			}
 			if(font!=null){
