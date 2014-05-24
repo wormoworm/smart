@@ -1,10 +1,13 @@
 package uk.tomhomewood.smart.activities;
 
+import java.lang.reflect.Field;
+
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
+import android.view.ViewConfiguration;
 import android.widget.TextView;
 
 public class SmartPreferenceActivity extends PreferenceActivity{
@@ -42,5 +45,27 @@ public class SmartPreferenceActivity extends PreferenceActivity{
 	protected TextView getActionBarTitle(){
 		final int titleId = Resources.getSystem().getIdentifier("action_bar_title", "id", "android");
 		return (TextView) getWindow().findViewById(titleId); 
+	}
+	
+	/**
+	 * Forces this {@link SmartActivity} to show the action bar overflow indicator, even if the device has a physical menu button.
+	 * @return 		True if the overflow indicator was enabled, false otherwise.
+	 */
+	protected boolean forceActionBarOverflow(){
+		try {
+	        ViewConfiguration config = ViewConfiguration.get(this);
+	        Field menuKeyField = ViewConfiguration.class.getDeclaredField("sHasPermanentMenuKey");
+	        if(menuKeyField != null) {
+	            menuKeyField.setAccessible(true);
+	            menuKeyField.setBoolean(config, false);
+	            return true;
+	        }
+	        else{
+	        	return false;
+	        }
+	    }
+		catch (Exception ex) {
+			return false;
+	    }
 	}
 }

@@ -6,16 +6,14 @@ import java.util.Iterator;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.content.Context;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 
 public class UniqueStringStorageClient{
 
 	private SharedPreferences preferences;
 
-	public UniqueStringStorageClient(Context context){
-		preferences = PreferenceManager.getDefaultSharedPreferences(context);
+	public UniqueStringStorageClient(SharedPreferences preferences){
+		this.preferences = preferences;
 	}
 
 	public ArrayList<String> getValuesByKey(String key){
