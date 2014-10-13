@@ -11,14 +11,24 @@ import android.view.ViewConfiguration;
 import android.widget.TextView;
 
 public class SmartFragmentActivity extends FragmentActivity{
+
+	private boolean forceManualOrientation = false;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		
-		if(!isLargeTablet()){				//True if the device is not a tablet (meaning it has a screen smaller than a 7" tablet)
-			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);			//If this is a small device, lock the orientation to portrait
+		if(!isLargeTablet() && !forceManualOrientation){				//True if the device is not a tablet (meaning it has a screen smaller than a 7" tablet)
+			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);			//If this is a small device or if this behaviour has been disabled, lock the orientation to portrait
 		}
+	}
+	
+	/**
+	 * Disables the automatic portrait /landscape behaviour described in {@link SmartActivity#isLargeTablet()}.
+	 * This must be valled before called super.onCreate().
+	 */
+	protected void forceManualOrientation(){
+		forceManualOrientation = true;
 	}
 	
 	/**
